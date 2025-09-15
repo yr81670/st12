@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>선택자연습</title>
+  <style>
+    /* section{background-color: #86c;} */
+    #section1{background-color: #86c;}
+    /* section p{background-color: #ccc;} 모든조상v모든후손*/
+    /* section>p{background-color: #ccc;} 자식 선택자 부모>자식*/
+    section>p{background-color: #ccc;}
+    /* section>.box>p {color:#f00} */
+    /* 형요소 ~ 아우요소
+    요소1 ~ 요소2 : 요소1 아래 동생인 모든 요소들
+    section h2 ~ p */
+    /* 형요소 + 바로아래동생요소 */
+    section h2+p{color: #f00;}
+  </style>
+</head>
+<body>
+  <!-- #wrap>header+.container+footer -->
+  <div id="wrap">
+    <header>헤더</header>
+    <div class="container">
+      <!-- section#section$*3 -->
+      <section id="section1">
+        <!-- p+.box>h1+p*2 -->
+        <p>섹션슬로건1</p>
+        <div class="box">
+          <h2>섹션타이틀</h2>
+          <p>이벤트 설명1</p>
+          <p>이벤트 설명2</p>
+        </div>
+      </section>
+      <section id="section2">
+         <p>섹션슬로건1</p>
+        <div class="box">
+          <h2>섹션타이틀</h2>
+          <p>이벤트 설명1</p>
+          <p>이벤트 설명2</p>
+        </div>
+      </section>
+      <section id="section3">
+         <p>섹션슬로건1</p>
+        <div class="box">
+          <h2>섹션타이틀</h2>
+          <p>이벤트 설명1</p>
+          <p>이벤트 설명2</p>
+        </div>
+      </section>
+    </div>
+    <!-- //.container -->
+    <footer>푸터</footer>
+  </div>
+</body>
+</html>
