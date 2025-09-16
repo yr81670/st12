@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>박스모델</title>
+  <style>
+    /* reset */
+    *{margin: 0; padding: 0;}
+    .box{
+      border: 1px solid #000
+    }
+    /*.box1{
+       상 우 하 좌
+       margin:50px 100px 200px 400px; }*/
+    /* .box2{
+      상하 우좌 (하 좌)
+      padding:50px 100px;
+     } */
+    /* .box{
+      margin: 50px;
+    } */
+    .box2{
+      margin-top: 100px;
+    }
+    .box1{
+      margin-top: 50px;
+    }
+    .container{
+      margin-top: 50px;
+      /* border:4px dotted #f00; */
+    }
+    .box3{
+      /* 상 우 하 좌
+       상 우좌 하 */
+      margin: 50px 100px 70px;
+    }
+    .box4{
+      margin: 50px 100px;
+    }
+  </style>
+</head>
+<body>
+  <!-- .container>.box.box$*4>lorem -->
+  <div class="container">
+    <p class="box box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident vitae sunt possimus alias, esse eligendi reiciendis. Nam molestias, minima, dignissimos expedita incidunt tempore aliquam fuga aperiam nisi cupiditate doloremque iusto.</p>
+    <div class="box box2">Ipsam libero vel nesciunt! Aut voluptate blanditiis veniam nisi deleniti consequuntur atque recusandae quisquam qui officia ex amet repellat rerum laborum reiciendis sed at, nihil porro dolorem voluptates quos ipsa!</div>
+    <div class="box box3">Sint explicabo voluptatibus deserunt fugiat hic est placeat fuga! Dolores, distinctio nostrum unde reiciendis id nulla, a quisquam molestiae sapiente quae, pariatur obcaecati blanditiis ut quaerat possimus at hic minima?</div>
+    <div class="box box4">Deleniti itaque natus illo, eligendi labore, debitis vero quisquam officia ducimus harum qui totam quibusdam id delectus quo ut rerum aspernatur? Explicabo blanditiis quas cupiditate, perferendis nulla eius vero adipisci!</div>
+  </div>
+</body>
+</html>
