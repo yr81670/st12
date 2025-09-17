@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>텍스트 관련 css</title>
+  <style>
+    /* span{font-weight: bold;
+    color: #f00;} */
+    .highlight{background-color: #fc6;}
+    .strong{font-weight: bold;}
+    .red-txt{color:#f00}
+  </style>
+</head>
+<body>
+  <h1>텍스트 관련 css</h1>
+  <p>Lorem <span class="red-txt strong">ipsum abc</span> <s>dolor</s> sit <em class="highlight">amet</em> consectetur <strong>adipisicing</strong> elit. Recusandae <span class="highlight strong red-txt">consequuntur adipisci</span> nam quos quas id tenetur, beatae sapiente magni voluptates officiis accusamus quam atque animi quasi? Facilis nam nostrum sapiente.
+  Aut doloremque nostrum perferendis enim nobis blanditiis doloribus. Ex voluptatum minima aperiam sequi placeat est odio iusto autem architecto neque ad assumenda iste laboriosam cupiditate dolor, doloribus reprehenderit dolorem reiciendis!</p>
+  <h2>밑줄문자, 글자 꾸미기</h2>
+  <p style="text-decoration: none;">가나다 라마바</p>
+  <p style="text-decoration: underline;">가나다 라마바</p>
+  <p style="text-decoration: overline;">가나다 라마바</p>
+  <p style="text-decoration: line-through;">가나다 라마바</p>
+  <p style="color: #f00; text-decoration: underline;">가나다 라마바</p>
+  <p>가나다 라마바</p>
+  <style>
+    /* padding: 값1 값2;
+    rem : root(html font-size:16px) 글자크기를 기준 
+    padding: 0.5rem-> 16:0.5   16:1 rem; */
+    h2{
+      padding:0.5rem 1rem;
+      background-color: #ccc;
+      border-bottom: 2px solid #000;
+      /* 밑줄문자 */
+      /* text-decoration: none; */
+      text-decoration: underline #ff0;
+    }
+    html{font-size: 14px;}
+  </style>
+</body>
+</html>

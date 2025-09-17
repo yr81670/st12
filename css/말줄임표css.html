@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>말줄임표css</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .box{
+      margin: 50px;
+      padding: 1em; /*자신의 font-size크기기준*/
+      background-color: #ccc;
+    }
+    /* 여러줄 말줄임 */
+    .box1{
+      /* white-space: normal; */
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 3;
+      width: 80%;
+      height: 70px;
+    }
+    /* 한줄 말줄임표 */
+    .box2{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+      /* oberflow */
+      /* 박스모델
+      너비: 부모의 콘텐츠 영역
+      높이: 자식(콘텐츠)의 높이*/
+      .box3,
+      .box4,
+      .box5{
+        width: 400px;
+        height: 40px;
+      }
+      .box3{overflow: visible;}
+      .box4{overflow: hidden;}
+      .box5{overflow: auto;}
+  </style>
+</head>
+<body>
+  <div class="box box1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illum praesentium voluptate commodi esse, consequatur earum asperiores. Aliquid, ipsum incidunt vel consequuntur earum facere veritatis impedit! Eos explicabo vel nesciunt.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia illum praesentium voluptate commodi esse, consequatur earum asperiores. Aliquid, ipsum incidunt vel consequuntur earum facere veritatis impedit! Eos explicabo vel nesciunt.</div>
+  <div class="box box2">Expedita neque dolores doloribus aliquam nulla libero at sit veritatis adipisci inventore consequatur, doloremque ratione dolorum id enim cupiditate recusandae quaerat pariatur vero necessitatibus iure? Consequatur doloribus magni nobis velit.</div>
+  <hr>
+  <!-- .box.box$@3*3>lorem -->
+  <div class="box box3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni fugiat modi quasi optio, ipsam praesentium dolorum doloribus vero. Fugit corrupti earum ea deleniti quibusdam modi cupiditate ab eum nostrum ipsum.</div>
+  <div class="box box4">Eos ipsa quidem alias necessitatibus, ullam repellat veniam sint consequatur recusandae inventore magnam labore, hic nisi expedita nobis, voluptatum consectetur quibusdam atque laboriosam doloribus. Velit amet eaque rem iure omnis.</div>
+  <div class="box box5">Qui ipsum error maxime quibusdam, suscipit fugit, voluptatem hic dolorum dicta fugiat explicabo placeat autem veritatis possimus distinctio nobis veniam eos sed. Recusandae eius commodi, in ea delectus vitae corporis.</div>
+</body>
+</html>
