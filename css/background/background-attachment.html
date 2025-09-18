@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-attachment</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    .sect{
+      /* background-color: #ccc; */
+      height: 100vh; 
+    }
+    .sect .title{
+      font-size: 60px;
+      font-weight: bold;
+      text-transform: capitalize;
+      text-align: center;
+    }
+    .section1{
+      background-color: #cef;
+    }
+    .section2{
+      background-image: url(./images/bg.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment:fixed;
+      /* positon의 기준이 브라우저가 */
+    }
+    .section3{
+      background-color: #ef6;
+    }
+  </style>
+</head>
+<body>
+  <!-- .container>section.sect.section$*3>p.title>{section title$} -->
+  <div class="container">
+    <section class="sect section1">
+      <p class="title">section title1</p>
+    </section>
+    <section class="sect section2">
+      <p class="title">section title2</p>
+    </section>
+    <section class="sect section3">
+      <p class="title">section title3</p>
+    </section>
+  </div>
+</body>
+</html>
