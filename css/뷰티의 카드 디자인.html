@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>뷰티의 카드 디자인</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{
+      margin: 50px; /*테스트용*/
+    }
+    /* 작업전 reset*/
+    ul, ol, li{list-style: none;}
+    /*이미지 크기 처리 방식
+    부모의 너비에 따라 유연크기 조정
+    width:100%
+    .ec-base-product .prdList__item .thumbnail a img */
+    .ec-base-product{
+      width: auto;
+    }
+    .ec-base-product ul.prdList{
+      width: auto;
+      background-color: #333;
+      /*자식요소 display: inline-block; 한칸공백문자없애기 */
+      font-size: 0;
+      line-height: 0;
+    }
+
+    .ec-base-product ul.prdList>li{
+      display: inline-block;
+      width: 33.333%;
+      background-color: #ccc;
+      border: 1px solid #f00;
+      box-sizing: border-box;
+      /* ul에 글자크기 줄간격 0으로 설정한것을 다시 설정
+       font-size: 0;
+      line-height: 0; */
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    /* 양 옆의 10px씩 들어온건 처리
+     margin: 0 -10px; */
+
+    .ec-base-product .prdList__item{
+      padding: 0 10px;
+    }
+
+    .ec-base-product .prdList__item .thumbnail{}
+    .ec-base-product .prdList__item .thumbnail a{
+      display: block;
+    }
+    .ec-base-product .prdList__item .thumbnail a img{
+      display: block;
+      width: 100%; /*부모의너비를따라서 유연한크기조정*/
+    }
+
+    .ec-base-product .prdList__item .description{
+      background-color: rgba(255,255,255,0.5);
+    }
+    .ec-base-product .prdList__item .description .name{}
+    .ec-base-product .prdList__item .description .spec{}
+    .ec-base-product .prdList__item .description .spec li{}
+
+  </style>
+</head>
+<body>
+  <div class="ec-base-product">
+    <ul class="prdList grid4">
+      <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="images/imgi_18_20250919162242104_7927.jpg" alt="상품명1"></a>
+          </div>
+          <!-- //.thumbnail -->
+          <div class="description">
+            <div class="name">상품명1</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+          <!-- //.description -->
+        </div>
+      </li>
+       <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="images/imgi_22_20250919161550092_7979.jpg"
+            alt="상품명2"></a>
+          </div>
+          <!-- //.thumbnail -->
+          <div class="description">
+            <div class="name">상품명2</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+          <!-- //.description -->
+        </div>
+      </li> <li>
+        <div class="prdList__item">
+          <div class="thumbnail">
+            <a href=""><img src="images/imgi_24_20250919160817340_2097.jpg" alt="상품명3"></a>
+          </div>
+          <!-- //.thumbnail -->
+          <div class="description">
+            <div class="name">상품명3</div>
+            <ul class="spec">
+              <li>10,000원</li>
+            </ul>
+          </div>
+          <!-- //.description -->
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
