@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex7 갤러리 부모의 크기에 따라 유동적 크기(비율 유지)</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    body{
+      margin: 50px;
+    }
+    /* 모양 */
+    .container{
+      background-color: #ccc;
+    }
+    .card-list{
+      background-color: magenta;
+      border: 1px solid darkmagenta;
+    }
+    .card-item{
+      background-color: dodgerblue;
+      border: 1px solid darkblue;
+    }
+    .card-item .thubm{
+      width: 300px;
+      border: 1px solid #000;
+    }
+    .card-item .thubm img{
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    /* flex */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- .card-wrap>.card>.thubm+.overlay>p.title+p.desc -->
+    <div class="card-list">
+      <div class="card-wrap">
+        <div class="card card-item">
+          <div class="thubm"><img src="https://picsum.photos/400/300?random=1" alt=""></div>
+          <div class="overlay">
+            <p class="title">포트폴리오 제목</p>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-wrap">
+        <div class="card card-item">
+          <div class="thubm"><img src="https://picsum.photos/400/300?random=2" alt=""></div>
+          <div class="overlay">
+            <p class="title">포트폴리오 제목</p>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-wrap">
+        <div class="card card-item">
+          <div class="thubm"><img src="https://picsum.photos/400/300?random=3" alt=""></div>
+          <div class="overlay">
+            <p class="title">포트폴리오 제목</p>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-wrap">
+        <div class="card card-item">
+          <div class="thubm"><img src="https://picsum.photos/400/300?random=4" alt=""></div>
+          <div class="overlay">
+            <p class="title">포트폴리오 제목</p>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-wrap">
+        <div class="card card-item">
+          <div class="thubm"><img src="https://picsum.photos/400/300?random=5" alt=""></div>
+          <div class="overlay">
+            <p class="title">포트폴리오 제목</p>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur.</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-wrap">
+        <div class="card card-item">
+          <div class="thubm"><img src="https://picsum.photos/400/300?random=6" alt=""></div>
+          <div class="overlay">
+            <p class="title">포트폴리오 제목</p>
+            <p class="desc">Lorem ipsum dolor sit amet consectetur.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
