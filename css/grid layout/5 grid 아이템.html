@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5 grid 아이템 배치</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{margin: 50px;}
+    .grid-container *{box-sizing: border-box;}
+    /* 모양 */
+    .grid-container{
+      background: pink;
+      min-height: 600px; /*정렬을 위해서 테스트용*/
+    }
+    .item{
+      background-color: dodgerblue;
+      border: 1px solid darkblue;
+    }
+
+    /* grid */
+    .grid-container{
+      /* 1. 그리드선언 */
+      display: grid; 
+      /* 2. 행열 수와 크기 */
+
+      /* 3줄 3칸 */
+      grid-template-rows: repeat(3, 100px) ;
+      grid-template-columns: repeat(3, 1fr) ;
+      
+
+      
+      /* 3. 정렬 지정 */
+      /* content container안에서 item덩어리들의 정렬*/
+      justify-content: start; /*container안에서 수평정렬*/
+      align-content: center;
+      
+      /* 4. item간의 여백
+      
+      justify-content, align-content space 값이 설정되어있을때는 gap 무시*/
+      gap: 10px 10px;
+      
+      /*
+      4. 암시적 그리드 크기 설정
+      지정된 줄,칸 이외에 자리잡게되는 아이템들의 크기를 지정
+      grid-auto-row, grid-auto-column 암시적 그리드 크기지정
+       아이템9개
+       아이템1 아이템2 아이템3
+       아이템4 아이템5 아이템6
+       
+       지정된 열행 외의 아이템들
+       아이템7 아이템8 아이템9 ->암시적 그리드
+       grid-auto-row, grid-auto-column 암시적 그리드 크기지정
+       */
+       grid-auto-rows: 100px;
+    }
+    
+    /* 5 그리드 아이템의 배치*/
+    .item:nth-child(1){
+      grid-column: 1/3;
+      grid-row: 1/2;
+    }
+    .item:nth-child(2){
+      grid-column: -1/-2;
+      /* grid-row: 1/3; */
+      grid-row: 1/span 2;
+    }
+    .item:nth-child(3){
+      grid-column: 1;
+      /* grid-row: 2/4; */
+      /* grid-row: 2/-1; */
+      grid-row: 2/span 2;
+    }
+     .item:nth-child(4){
+      grid-column: 2/span 2;
+      grid-row: 3;
+     }
+     .item:nth-child(5){
+      grid-column: 2;
+      grid-row: 2;
+     }
+      .item:nth-child(6){
+      grid-column: 1/-1;
+      grid-row: 4/span 1;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="item">item1</div>
+    <div class="item">item2</div>
+    <div class="item">item3</div>
+    <div class="item">item4</div>
+    <div class="item">item5</div>
+    <div class="item">item6</div>
+
+  </div>
+</body>
+</html>
