@@ -1,7 +1,17 @@
 /* ****
 mystyle
  */
+ /*******
+ 변수 variables
+ ********/
+ :root{
+  --primary-color:#1f1f1f;
 
+}
+
+ /* ***
+ .prdList
+ *** */
  .ec-base-product .prdList{
   display: flex;
   flex-wrap: wrap;
@@ -195,8 +205,8 @@ card-border-no-margin
 .section{
   /* section관련 변수선언 */
   --section-bg: #fea;
-  --section-padding-top-bottom:40px;
-  --section--main-banner-padding:16px
+  --section-padding-top-bottom: 40px;
+  --section-main-banner-padding: 16px;
 }
 
 /* max-width: 1230px */
@@ -209,7 +219,7 @@ card-border-no-margin
 }
 #contents > .section_full_content_center .main_3dan_banner .main_banner_txt{
   margin-top: 0;
-  padding: var(--section--main-banner-padding);
+  padding: var(--section-main-banner-padding);
   background-color: #fff;
   box-sizing: border-box;
 }
@@ -252,8 +262,15 @@ hero section용
  .visual-section{
   --visual-swiper-width:100%;
  }
- @media (min-width: 1024px) {
-  #contents > .visual-section{
+
+ /* @media (min-width: 1024px) {
+   #contents.ub-style .visual-section {
+    max-width: none;
+    width: 100% }*/
+
+    /* html에서 #contents class="ub-style" */
+ @media (max-width: 1024px) {
+  #container #contents.ub-style {
     max-width: none;
     width: 100%;
   }
@@ -273,3 +290,113 @@ hero section용
   height: auto;
   max-width: none;
  }
+
+ /* 
+ ub-swiper
+ 1. navigation 이미지 변경
+ 2. pagination 색상변경
+ */
+ .ub-swiper .swiper-button-prev,
+ .ub-swiper .swiper-button-next{
+  width:60px; height: 60px;
+  background-size: contain;
+ }
+.ub-swiper .swiper-button-prev{
+    background-image: url(images/arrow_back.svg);
+    background-position: center;
+    left: 20px;
+    right: auto;
+}
+.ub-swiper .swiper-button-next {
+    background-image: url(images/arrow_forward.svg);
+    background-position: center;
+    left: auto;
+    right: 20px;
+}
+.ub-swiper .swiper-pagination{
+  left:0;
+  bottom:1rem;
+  width: 100%;
+}
+.ub-swiper .swiper-pagination-bullet{
+  vertical-align: middle;
+  margin-right:10px;
+}
+
+ .ub-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: transparent;
+    border: 4px solid var(--primary-color);
+ }
+
+ /****
+ swiper controls가 슬라이드 아래 표시
+ */
+.ub-swiper.ub-swiper-controls-bottom{
+  width: 80%;
+  margin: 0 auto;
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-wrapper{
+  /*하단에 정렬*/
+  /* align-items: end;  */
+
+  /* 슬라이드 .swiper-wrapper 기준 세로 가운데 */
+  align-items: center;
+}
+
+.ub-swiper.ub-swiper-controls-bottom .swiper-slide{
+  width: 100% !important;
+  transform: scale(0.9);
+  /*슬라이드에 하단정렬할땐 transform-origin*/
+  /* transform-origin: center bottom; */
+
+  /*슬라이드를 가운데에 정렬할 때는 transform-origin*/
+  transform-origin: center center;
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-slide-active{
+  transform: scale(1)
+}
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  box-sizing: border-box;
+  padding:0.5rem 0;
+}
+
+/* flex item */
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls>div{
+  position: static;
+  box-sizing: border-box;
+  /* flex-shrink: 1; /*기본값*/
+  /* flex-grow: 0;
+  flex-basis: auto; */
+}
+.ub-swiper.ub-swiper-controls-bottom .ub-swiper-controls .swiper-scrollbar{
+  order:1;
+  width: 100%;
+  height: 4px;
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-pagination-fraction {
+  order:2;
+  width: auto;
+  
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1rem;
+  /* align-items: stretch; */
+
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-button-next,
+.ub-swiper.ub-swiper-controls-bottom .swiper-button-prev{
+  order:3;
+  width: 28px; height: 28px;
+  margin-top: 0;
+  border: 1px solid #ccc;
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-button-prev{
+  background-position: 4px center;
+}
+.ub-swiper.ub-swiper-controls-bottom .swiper-button-next{
+  margin-left: -0.8rem;
+}
