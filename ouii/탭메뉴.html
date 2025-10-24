@@ -34,6 +34,9 @@
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-product.css">
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-prdInfo.css">
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-paginate.css">
+
+  <link rel="stylesheet" href="/ouii/layout/basic/css/main.css">
+
   <link rel="stylesheet" href="/myfolder/css/ub-variables.css">
   <link rel="stylesheet" href="/myfolder/css/ub-grid-system.css">
   <!-- ------------------- -->
@@ -90,8 +93,9 @@
         <!--@contents-->
 
         <!-- 여기에 테스트 콘텐츠 복사 -->
-        <section class="section main_product_category tab-horizontal" data-ez-module="product-list-category/2" data-ez-layout="grid4"
-          data-ez="contents-1tbnia4-1">
+         <!-- <section class="section main_product_category tab-horizontal" -->
+        <section class="section main_product_category tab-vertical" data-ez-module="product-list-category/2" data-ez-layout="grid4"
+          data-ez="contents-0hawpqh-1">
 
           <div class="main_product_inner">
             <div class="main_title ez-align-center" data-ez-role="ez-align" data-ez-align="center">
@@ -103,10 +107,15 @@
             <ul class="main_product_tab" data-ez-role="tab-list">
               <li data-ez-role="tab-item"><button type="button" class="button active" data-id="tabContent1"
                   data-ez-role="name" data-name="귀걸이">귀걸이</button></li>
-              <li data-ez-role="tab-item"><button type="button" class="button active" data-id="tabContent2" data-ez-role="name"
+              <li data-ez-role="tab-item"><button type="button" class="button" data-id="tabContent2" data-ez-role="name"
                   data-name="목걸이">가나다라 목걸이</button></li>
               <li data-ez-role="tab-item"><button type="button" class="button" data-id="tabContent3" data-ez-role="name"
                   data-name="반지">반지</button></li>
+              <li data-ez-role="tab-item"><button type="button" class="button" data-id="tabContent2" data-ez-role="name"
+                  data-name="목걸이">가나다라 목걸이</button></li>
+              <li data-ez-role="tab-item"><button type="button" class="button" data-id="tabContent3" data-ez-role="name"
+                  data-name="반지">반지</button></li>
+             
 
             </ul><!-- //main_product_tab -->
           </div><!-- //main_product_inner -->
@@ -163,6 +172,22 @@
   <!--@css(/layout/basic/css/add_theme02.css)-->
   <!--@css(/layout/basic/css/add_theme03.css)-->
   <!--@css(/layout/basic/css/add_layout.css)-->
+
+  <script>
+    // 탭메뉴 테스트를 위한 스크립트 복사  -->
+ jQuery(document).ready(function () {
+/* 메인 탭카테고리 */
+	jQuery(".main_product_tab li").bind("click", function () {
+		jQuery(this).parent().find('li button').removeClass("active");
+		jQuery(this).parents('.main_product_category').find('.content_list .tabcontent').removeClass("active");
+		jQuery('button', this).addClass("active");
+		var activeTab = jQuery('button', this).attr("data-id");
+		jQuery(this).parents('.main_product_category').find('.content_list .tabcontent' + '#' + activeTab).addClass("active");
+	});
+	jQuery('.main_product_category .main_product_inner .main_product_tab li button, .content_list .tabcontent').removeClass('active'); // 나머지 탭 숨김
+	jQuery('.main_product_category .main_product_inner .main_product_tab li:first-child button, .content_list .tabcontent:first-child').addClass('active'); // 첫번째 탭 오픈
+ });
+ </script>
 </body>
 
 </html>
