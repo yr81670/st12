@@ -14,8 +14,9 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <!-- // PG크로스브라우징필수내용 -->
 
-  <title>ouii-템플릿</title>
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <title>탭메뉴연습</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="">
 
 
@@ -33,6 +34,9 @@
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-product.css">
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-prdInfo.css">
   <link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-paginate.css">
+
+  <link rel="stylesheet" href="/ouii/layout/basic/css/main.css">
+
   <link rel="stylesheet" href="/myfolder/css/ub-variables.css">
   <link rel="stylesheet" href="/myfolder/css/ub-grid-system.css">
   <!-- ------------------- -->
@@ -87,29 +91,64 @@
       <div id="contents">
         <!-- 메인 콘텐츠 영역 -->
         <!--@contents-->
-        
-<!-- 여기에 테스트 콘텐츠 복사 -->
+
+        <!-- 여기에 테스트 콘텐츠 복사 -->
+         <!-- <section class="section main_product_category tab-horizontal" -->
+        <section class="section main_product_category tab-vertical" data-ez-module="product-list-category/2" data-ez-layout="grid4"
+          data-ez="contents-0hawpqh-1">
+
+          <div class="main_product_inner">
+            <div class="main_title ez-align-center" data-ez-role="ez-align" data-ez-align="center">
+              <!-- 메인 베스트셀러 수정하는곳 -->
+              <div class="main_title_txt01" data-ez-role="title">베스트 아이템</div>
+              <div class="main_title_txt02" data-ez-role="subtitle">가장 많이 선택한 아이템</div>
+            </div><!-- //main_title -->
+
+            <ul class="main_product_tab" data-ez-role="tab-list">
+              <li data-ez-role="tab-item"><button type="button" class="button active" data-id="tabContent1"
+                  data-ez-role="name" data-name="귀걸이">귀걸이</button></li>
+              <li data-ez-role="tab-item"><button type="button" class="button" data-id="tabContent2" data-ez-role="name"
+                  data-name="목걸이">가나다라 목걸이</button></li>
+              <li data-ez-role="tab-item"><button type="button" class="button" data-id="tabContent3" data-ez-role="name"
+                  data-name="반지">반지</button></li>
+              <li data-ez-role="tab-item"><button type="button" class="button" data-id="tabContent2" data-ez-role="name"
+                  data-name="목걸이">가나다라 목걸이</button></li>
+              <li data-ez-role="tab-item"><button type="button" class="button" data-id="tabContent3" data-ez-role="name"
+                  data-name="반지">반지</button></li>
+             
+
+            </ul><!-- //main_product_tab -->
+          </div><!-- //main_product_inner -->
+
+          <div class="content_list" data-ez-role="content-list">
+            <div class="tabcontent active" id="tabContent1" data-ez-role="content-item">
+              <div data-ez-holder="product_listmain">
+                탭콘텐츠1
+              </div>
+            </div>
+
+            <div class="tabcontent" id="tabContent2" data-ez-role="content-item">
+              <div data-ez-holder="product_listmain">
+                탭콘텐츠2
+              </div>
+            </div>
+
+            <div class="tabcontent" id="tabContent3" data-ez-role="content-item">
+              <div data-ez-holder="product_listmain">
+                탭콘텐츠3
+              </div>
+            </div>
+
+
+          </div><!-- //content-list -->
+        </section>
+
 
       </div>
     </div>
     <!--@import(/layout/basic/footer.html)-->
     <!--#ez="1/1"-->
   </div><!-- //wrap -->
-
-  <div id="progressPaybar" style="display:none;">
-    <div id="progressPaybarBackground" class="layerProgress"></div>
-    <div id="progressPaybarView">
-      <div class="box">
-        <h3>현재 결제가 진행중입니다.</h3>
-        <p class="txt">
-          본 결제 창은 결제완료 후 자동으로 닫히며,결제 진행 중에 본 결제 창을 닫으시면<br>
-          주문이 되지 않으니 결제 완료 될 때 까지 닫지 마시기 바랍니다.
-        </p>
-        <div class="progressbar"><img src="//img.echosting.cafe24.com/skin/skin/common/img_loading.gif" alt="loading"
-            loading="lazy"></div>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -124,6 +163,7 @@
   <link rel="stylesheet" href="/ouii/layout/basic/css/add_layout.css">
 
   <link rel="stylesheet" href="/myfolder/mystyle.css">
+  <link rel="stylesheet" href="/ouii/tab.css">
 
   <!-- ---------------------------------- -->
   <!--@css(/layout/basic/css/sub_style.css)-->
@@ -132,6 +172,22 @@
   <!--@css(/layout/basic/css/add_theme02.css)-->
   <!--@css(/layout/basic/css/add_theme03.css)-->
   <!--@css(/layout/basic/css/add_layout.css)-->
+
+  <script>
+    // 탭메뉴 테스트를 위한 스크립트 복사  -->
+ jQuery(document).ready(function () {
+/* 메인 탭카테고리 */
+	jQuery(".main_product_tab li").bind("click", function () {
+		jQuery(this).parent().find('li button').removeClass("active");
+		jQuery(this).parents('.main_product_category').find('.content_list .tabcontent').removeClass("active");
+		jQuery('button', this).addClass("active");
+		var activeTab = jQuery('button', this).attr("data-id");
+		jQuery(this).parents('.main_product_category').find('.content_list .tabcontent' + '#' + activeTab).addClass("active");
+	});
+	jQuery('.main_product_category .main_product_inner .main_product_tab li button, .content_list .tabcontent').removeClass('active'); // 나머지 탭 숨김
+	jQuery('.main_product_category .main_product_inner .main_product_tab li:first-child button, .content_list .tabcontent:first-child').addClass('active'); // 첫번째 탭 오픈
+ });
+ </script>
 </body>
 
 </html>
