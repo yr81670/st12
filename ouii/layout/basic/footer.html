@@ -1,15 +1,19 @@
 <div class="bottom-nav RMB RTB" ez-module="bottom-navigation">
-    <ul class="bottom-nav__tabBar">
-        <li><button type="button" class="btnNav eNavFold"><i aria-hidden="true" class="icon icoNav"></i>네비게이션</button></li>
-        <li><button type="button" class="btnSearch eSearch"><!--@import(/svg/icon-search.html)-->검색</button></li>
-        <li><a href="/"><!--@import(/svg/icon-home.html)-->홈</a></li>
-        <li module="Layout_stateLogon"><a href="/order/basket.html"><!--@import(/svg/icon-cart.html)-->Cart <span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a></li>
-        <li module="Layout_stateLogoff"><a href="/order/basket.html"><!--@import(/svg/icon-cart.html)-->Cart <span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a></li>
-        <li><a href="/myshop/index.html"><!--@import(/svg/icon-user.html)-->마이쇼핑</a></li>
-    </ul>
-    <div class="bottom-nav__top">
-        <a href="#wrap" title="화면 최상단으로 이동하기"><!--@import(/svg/icon-quick-arrow.html)--></a>
-    </div>
+	<ul class="bottom-nav__tabBar">
+		<li><button type="button" class="btnNav eNavFold"><i aria-hidden="true" class="icon icoNav"></i>네비게이션</button></li>
+		<li><button type="button" class="btnSearch eSearch"><!--@import(/svg/icon-search.html)-->검색</button></li>
+		<li><a href="/"><!--@import(/svg/icon-home.html)-->홈</a></li>
+		<li module="Layout_stateLogon"><a href="/order/basket.html"><!--@import(/svg/icon-cart.html)-->Cart <span
+					class="count {$basket_count_display|display} {$basket_count_display_class}"><span
+						class="{$basket_count_class}">{$basket_count}</span></span></a></li>
+		<li module="Layout_stateLogoff"><a href="/order/basket.html"><!--@import(/svg/icon-cart.html)-->Cart <span
+					class="count {$basket_count_display|display} {$basket_count_display_class}"><span
+						class="{$basket_count_class}">{$basket_count}</span></span></a></li>
+		<li><a href="/myshop/index.html"><!--@import(/svg/icon-user.html)-->마이쇼핑</a></li>
+	</ul>
+	<div class="bottom-nav__top">
+		<a href="#wrap" title="화면 최상단으로 이동하기"><!--@import(/svg/icon-quick-arrow.html)--></a>
+	</div>
 </div>
 <div class="footer_margin"></div>
 <footer id="footer" class="layout1" data-ez-layout="layout1">
@@ -20,8 +24,9 @@
 			<ez-item data-id="layout3" data-name="중앙형"></ez-item>
 		</ez-var>
 	</ez-prop>
-    <div class="inner" module="Layout_footer">
-		<div class="bt_logo" module="Layout_LogoBottom"><a href="/"><img src="{$logo}" alt="{$mall_name}"></a></div><!-- //bt_logo -->
+	<div class="inner" module="Layout_footer">
+		<div class="bt_logo" module="Layout_LogoBottom"><a href="/"><img src="{$logo}" alt="{$mall_name}"></a></div>
+		<!-- //bt_logo -->
 
 		<div class="bt_util" data-ez-group="shortcut">
 			<div data-ez-role="title" style="display:none;">바로가기</div>
@@ -36,23 +41,33 @@
 		<div class="bt_wrap">
 			<div class="bt_info" data-ez-group="info">
 				<div class="title" data-ez-role="title">쇼핑몰 기본정보</div>
-                <div class="bt_info_list" data-ez-role="list">
-                  <div data-ez-item="company_name"><span data-ez-role="field">상호명</span> <span data-ez-role="value">{$company_name}</span></div>
-				  <div data-ez-item="president_name"><span data-ez-role="field">대표자명</span> <span data-ez-role="value">{$president_name}</span></div>
-				  <div data-ez-item="address"><span data-ez-role="field">사업장 주소</span> <span data-ez-role="value">{$mall_zipcode} {$mall_addr1} {$mall_addr2}</span></div>
-				  <div data-ez-item="phone"><span data-ez-role="field">대표 전화</span> <span data-ez-role="value">{$phone}</span></div>
-				  <div data-ez-item="company_regno"><span data-ez-role="field">사업자 등록번호</span> <span data-ez-role="value">{$company_regno}</span></div>
-				  <div data-ez-item="network_regno"><span data-ez-role="field">통신판매업 신고번호</span> <span data-ez-role="value">{$network_regno} {$biz_no_link}</span></div>
-				  <div data-ez-item="cpo_name"><span data-ez-role="field">개인정보보호책임자</span> <span data-ez-role="value">{$cpo_name}</span></div>
-			  </div><!-- //bt_info_list -->
+				<div class="bt_info_list" data-ez-role="list">
+					<div data-ez-item="company_name"><span data-ez-role="field">상호명</span> <span
+							data-ez-role="value">{$company_name}</span></div>
+					<div data-ez-item="president_name"><span data-ez-role="field">대표자명</span> <span
+							data-ez-role="value">{$president_name}</span></div>
+					<div data-ez-item="address"><span data-ez-role="field">사업장 주소</span> <span
+							data-ez-role="value">{$mall_zipcode} {$mall_addr1} {$mall_addr2}</span></div>
+					<div data-ez-item="phone"><span data-ez-role="field">대표 전화</span> <span data-ez-role="value">{$phone}</span>
+					</div>
+					<div data-ez-item="company_regno"><span data-ez-role="field">사업자 등록번호</span> <span
+							data-ez-role="value">{$company_regno}</span></div>
+					<div data-ez-item="network_regno"><span data-ez-role="field">통신판매업 신고번호</span> <span
+							data-ez-role="value">{$network_regno} {$biz_no_link}</span></div>
+					<div data-ez-item="cpo_name"><span data-ez-role="field">개인정보보호책임자</span> <span
+							data-ez-role="value">{$cpo_name}</span></div>
+				</div><!-- //bt_info_list -->
 			</div><!-- //bt_info -->
 
 			<div module="Layout_Info" class="bt_cscenter" data-ez-group="cs">
 				<div class="title" data-ez-role="title">고객센터 정보</div>
 				<div data-ez-role="list">
-					<div data-ez-item="phone" class="bt_txt01"><strong>상담/주문 전화</strong><span class="pdr10"></span><span data-ez-role="value">{$phone}</span></div>
-					<div data-ez-item="email" class="bt_txt02"><strong>상담/주문 이메일</strong><span data-ez-role="value">{$inquiry_email}</span></div>
-					<div data-ez-item="runtime" class="bt_txt02"><strong>CS운영시간</strong><span data-ez-role="value">{$runtime}</span></div>
+					<div data-ez-item="phone" class="bt_txt01"><strong>상담/주문 전화</strong><span class="pdr10"></span><span
+							data-ez-role="value">{$phone}</span></div>
+					<div data-ez-item="email" class="bt_txt02"><strong>상담/주문 이메일</strong><span
+							data-ez-role="value">{$inquiry_email}</span></div>
+					<div data-ez-item="runtime" class="bt_txt02"><strong>CS운영시간</strong><span
+							data-ez-role="value">{$runtime}</span></div>
 				</div>
 			</div><!-- //bt_cscenter -->
 
@@ -92,16 +107,22 @@
 			</div><!-- //bt_copyright -->
 
 			<div class="bt_sns" data-ez-group="sns" data-ez-role="list">
-        <div class="title" data-ez-role="title">SNS</div>
-				<a data-ez-item="instagram" href="https://instagram.com/" target="_blank"><!--@import(/svg/icon-instagram.html)-->instagram</a>
-				<a data-ez-item="youtube" href="https://youtube.com/" target="_blank"><!--@import(/svg/icon-youtube.html)-->youtube</a>
-				<a data-ez-item="facebook" href="https://facebook.com/" target="_blank"><!--@import(/svg/icon-facebook.html)-->facebook</a>
-				<a data-ez-item="kakao" href="https://pf.kakao.com/" target="_blank"><!--@import(/svg/icon-kakao.html)-->kakao</a>
-				<a data-ez-item="twitter" href="https://twitter.com/" target="_blank"><!--@import(/svg/icon-twitter.html)-->twitter</a>
-				<a data-ez-item="blog" href="https://blog.naver.com/" target="_blank"><!--@import(/svg/icon-blog.html)-->blog</a>
+				<div class="title" data-ez-role="title">SNS</div>
+				<a data-ez-item="instagram" href="https://instagram.com/"
+					target="_blank"><!--@import(/svg/icon-instagram.html)-->instagram</a>
+				<a data-ez-item="youtube" href="https://youtube.com/"
+					target="_blank"><!--@import(/svg/icon-youtube.html)-->youtube</a>
+				<a data-ez-item="facebook" href="https://facebook.com/"
+					target="_blank"><!--@import(/svg/icon-facebook.html)-->facebook</a>
+				<a data-ez-item="kakao" href="https://pf.kakao.com/"
+					target="_blank"><!--@import(/svg/icon-kakao.html)-->kakao</a>
+				<a data-ez-item="twitter" href="https://twitter.com/"
+					target="_blank"><!--@import(/svg/icon-twitter.html)-->twitter</a>
+				<a data-ez-item="blog" href="https://blog.naver.com/"
+					target="_blank"><!--@import(/svg/icon-blog.html)-->blog</a>
 			</div><!-- //bt_sns -->
 		</div><!-- //bt_wrap2 -->
-    </div><!-- //inner -->
+	</div><!-- //inner -->
 </footer>
 <div module="Layout_SearchHeader">
 	<!--
@@ -111,7 +132,9 @@
 	<div class="title">SEARCH</div>
 	<fieldset>
 		<legend>검색</legend>
-		{$form.keyword}<button type="button" class="btnDelete">삭제</button><button type="button" class="btnSearch" onclick="{$action_search_submit}"><!--@import(/svg/icon-search.html)--> 검색</button><ul class="autoDrop" id="{$search_auto_id}"></ul>
+		{$form.keyword}<button type="button" class="btnDelete">삭제</button><button type="button" class="btnSearch"
+			onclick="{$action_search_submit}"><!--@import(/svg/icon-search.html)--> 검색</button>
+		<ul class="autoDrop" id="{$search_auto_id}"></ul>
 	</fieldset>
 	<button type="button" class="btnClose"><i aria-hidden="true" class="icon icoClose"></i>닫기</button>
 </div>
