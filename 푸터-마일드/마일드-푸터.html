@@ -19,20 +19,20 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-	<link rel="stylesheet" href="/ouii/layout/basic/css/common.css"><!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
-	<link rel="stylesheet" href="/ouii/layout/basic/css/layout.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-ui.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-button.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-tab.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-table.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-tooltip.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-help.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-fold.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-box.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-desc.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-product.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-prdInfo.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/ec-base-paginate.css">
+	<link rel="stylesheet" href="./layout/basic/css/common.css"><!-- 해당 CSS는 쇼핑몰 전체 페이지에 영향을 줍니다. 삭제와 수정에 주의해주세요. -->
+	<link rel="stylesheet" href="./layout/basic/css/layout-new.css">
+	<link rel="stylesheet" href="./layout/basic/css/ec-base-ui.css">
+	<link rel="stylesheet" href="./layout/basic/css/ec-base-button.css">
+	<link rel="stylesheet" href="./layout/basic/css/ec-base-tab.css">
+	<link rel="stylesheet" href="./layout/basic/css/ec-base-table.css">
+	<link rel="stylesheet" href="./layout/basic/css/ec-base-tooltip.css">
+	<link rel="stylesheet" href="./layout/basic/css/ec-base-help.css">
+	<link rel="stylesheet" href="./layout/basic/css/ec-base-fold.css">
+	<link rel="stylesheet" href="./layout/basic/css/ec-base-box.css">
+	<link rel="stylesheet" href="./layout/basic/css/ec-base-desc.css">
+	<link rel="stylesheet" href="./layout/basic/css/ec-base-product.css">
+	<link rel="stylesheet" href="./layout/basic/css/ec-base-prdInfo.css">
+	<link rel="stylesheet" href="./layout/basic/css/ec-base-paginate.css">
 	<link rel="stylesheet" href="/myfolder/css/ub-variables.css">
 	<link rel="stylesheet" href="/myfolder/css/ub-grid-system.css">
 	<!-- ------------------- -->
@@ -111,9 +111,12 @@
 			<div class="xans-element- xans-layout xans-layout-footer inner ">
 				<div class="bt_top">
 					<div class="info_left">
-						<div class="xans-element- xans-layout xans-layout-logobottom bt_logo "><a href="/skin-skin10"><img
+						<div class="xans-element- xans-layout xans-layout-logobottom bt_logo "><a href="/skin-skin10">
+							<img
 									src="//ecimg.cafe24img.com/pg2183b55161532024/yr816/web/upload/category/logo/v2_9bcce89361bcb9dbbacebd44ef923d88_WGftOBkIcg_bottom.jpg"
-									alt="네모네Book"></a>
+									alt="네모네Book">
+									네모네북
+								</a>
 						</div>
 						<!-- //bt_logo -->
 						<ul>
@@ -252,41 +255,16 @@
 	</div><!-- //wrap -->
 
 
-	<div module="Layout_multishopShipping">
-		<!--@css(/layout/basic/css/ec-base-layer.css)-->
-		<!--@css(/css/module/layout/multishopShipping.css)-->
-		<!--@js(/js/module/layout/multishopShipping.js)-->
-		<div class="worldshipLayer ec-base-layer typeModal">
-			<div class="header">
-				<h3>WORLD SHIPPING</h3>
-			</div>
-			<div class="content">
-				<p class="desc">PLEASE SELECT THE DESTINATION COUNTRY AND LANGUAGE :</p>
-				<select module="Layout_multishopShippingCountrylist">
-					<option value="{$country_code}" {$country_default_selected}>SHIPPING TO : {$country_name}</option>
-					<option value="{$country_code}" {$country_default_selected}>SHIPPING TO : {$country_name}</option>
-				</select>
-				<select module="Layout_multishopShippingLanguagelist">
-					<option value="{$shop_domain}" {$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
-					<option value="{$shop_domain}" {$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
-				</select>
-			</div>
-			<div class="ec-base-button">
-				<a href="#none" class="btnSubmitFix sizeM">GO</a>
-			</div>
-			<a href="#none" class="btnClose">닫기</a>
-		</div>
-	</div>
-
 	<div class="layer_shadow" id="layer_shadow"></div>
 	<div id="layoutDimmed" class="dimmed"></div>
 
-	<link rel="stylesheet" href="/ouii/layout/basic/css/sub_style.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/sub_theme.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/add_theme01.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/add_theme02.css">
-	<link rel="stylesheet" href="/ouii/layout/basic/css/add_layout.css">
+	<link rel="stylesheet" href="./layout/basic/css/sub_style.css">
+	<link rel="stylesheet" href="./layout/basic/css/sub_theme.css">
+	<link rel="stylesheet" href="./layout/basic/css/add_theme01.css">
+	<link rel="stylesheet" href="./layout/basic/css/add_theme02.css">
+	<link rel="stylesheet" href="./layout/basic/css/add_layout.css">
 
+	<link rel="stylesheet" href="footer.css">
 	<link rel="stylesheet" href="/myfolder/mystyle.css">
 
 	<!-- ---------------------------------- -->
