@@ -1,0 +1,104 @@
+/* 네모네북 푸터 css */
+#footer {
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+}
+
+#footer .inner_t {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#footer .inner .inner_t .info_right .wrap_cs .bt_title {
+  font-size: 14px;
+  font-weight: 700;
+  /* color: #f00; */
+  margin-bottom: 5px;
+}
+
+#footer .inner .inner_t .info_left .bt_logo {
+  margin-bottom: 40px;
+}
+
+
+.bt_info_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  opacity: 0.8;
+}
+
+.inner_t .info_left .bt_logo a img {
+  width: clamp(150px, 10vw, 200px);
+}
+
+.sns_txt {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+}
+
+.sns_txt [data-ez-role="title"] {
+  font-size: 13px;
+  margin-right: 8px;
+
+}
+
+.sns_txt a {
+  width: 28px;
+  height: 28px;
+  display: block;
+  overflow: hidden;
+  background: no-repeat center/contain;
+  text-indent: -9999px;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: filter 0.3s, opacity 0.3s;
+}
+
+.sns_txt a:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.sns_txt a[data-ez-item="instagram"] {
+  background-image: url(/newfolder/images/instagram_logo.png);
+}
+
+.sns_txt a[data-ez-item="youtube"] {
+  background-image: url(/newfolder/images/youtube_logo.png);
+}
+
+.sns_txt a[data-ez-item="twitter"] {
+  background-image: url(/newfolder/images/twitter_logo.png);
+}
+
+.sns_txt a[data-ez-item="facebook"],
+.sns_txt a[data-ez-item="kakao"],
+.sns_txt a[data-ez-item="blog"] {}
+
+
+/*1024px 이하 아이콘 가로*/
+@media (max-width: 1024px) {
+  #footer .inner .inner_t .info_right .wrap_cs .bank_txt {
+        margin-bottom: 15px;
+    }
+  .sns_txt {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (max-width:767px) {
+  .inner_t {
+    flex-direction: row;
+  }
+}
+
+#right_quick {
+  display: none;
+}

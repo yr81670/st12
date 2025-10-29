@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./layout/basic/css/common.css">
+<link rel="stylesheet" href="./layout/basic/css/layout.css">
+
+</head>
+<body>
+  <div id="footer">
+  <div class="inner">
+    <div class="bt_top">
+      <div class="info_left">
+        <div class="bt_logo">1로고</div>
+        <ul>
+          <li class="bt_company">4기본정보</li>
+        </ul>
+
+      </div>
+      <ul class="bt_top_fold">
+        <li class="bt_cc">5,6 고객센터 정보</li>
+        <li class="bt_bank">7 결제 정보</li>
+        <li class="bt_sns">2 sns</li>
+      </ul>
+    </div>
+    <!-- //.bt_top -->
+    <div class="bt_middle">
+      <ul class="bt_util">3 바로가기(하단메뉴) 메뉴</ul>
+    </div>
+    <!-- //.bt_middle -->
+    <div class="bt_bottom">
+      <div class="bt_copyright">8 copyright</div>
+    </div>
+    <!-- //bt_bottom -->
+  </div>
+</div>
+
+<style>
+  #footer .inner {background-color: beige;}
+  #footer .inner{
+    position: relative;
+  }
+  .bt_top{border: 1px solid #f00;}
+  /* 1번 */
+  .bt_top .info_left .bt_logo{background-color: #f6c;}
+  /* 5,6 */
+  .bt_top .bt_top_fold{background-color: #f6c;}
+
+  /* .bt_middle .bt_util{ 3바로가기 메뉴*/
+  #footer .inner .bt_middle{
+    background-color: dodgerblue;
+    width: calc(100% - (12% + 14%));
+    flex-basis: auto;
+    position: absolute;
+    /* top .inner 의 padding-top 값 */
+    /* left는 로고크기만큼 */
+    top: 80px; left: calc(200px + 20px);
+  }
+  /* 2 기본정보 */
+  .bt_top .info_left .bt_company{
+    background-color: #c6f;
+    position: absolute;
+    flex-basis: auto;
+    width: calc(100% - (12% + 14%));
+    /* top .inner의 padding-top값의 .bt_middle의 높이
+    calc( .bt_middle 의 높이 + 여백) */
+    top:calc(50px + 20px); left: calc(200px + 20px);
+  }
+  /* 2 sns  */
+   /* .bg_loge의 heigh
+    calc(.bg_loge의 heigh +여백) */
+  .bt_top .bt_top_fold .bt_sns{
+    background-color: #6cf;
+    position: absolute;
+    left: 0;
+    top: calc(58px + 16px);
+    margin-left: 0;
+  }
+
+  /* 8 copyright */
+  .bt_bottom .bt_copyright{
+    background-color: #cf6;
+  }
+  .bt_top .bt_top_fold .bt_bank{
+    position: absolute; left: 0; top: 0;
+    display: none;
+  }
+
+  @media (max-width:1280px){
+    #footer .inner .bt_middle{
+    position: static;
+    flex-basis: 100%;
+    width: auto;
+  }
+  .bt_top .info_left .bt_company{
+    position: static;
+    flex-basis: 100%;
+    width: auto;
+  }
+  .bt_top .bt_top_fold .bt_sns{
+     position: static;
+  }
+}
+</style>
+</body>
+</html>

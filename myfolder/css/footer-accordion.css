@@ -1,0 +1,53 @@
+/* =========================================================================
+   푸터 아코디언 UI 기본 스타일
+   ========================================================================= */
+
+.accordion-item [data-ez-role="title"] {
+    /* 화살표 아이콘을 오른쪽 끝에 배치하기 위해 flex 사용 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* 타이틀과 화살표 사이에 약간의 패딩 추가 */
+    padding-right: 20px; 
+}
+
+
+@media (max-width: 1024px) { 
+    
+    /* 1. 모바일 초기 상태 강제 숨김 (스크립트 로딩 중 펼쳐지는 문제 방지) */
+    .accordion-item .accordion-content-wrapper {
+        display: none; 
+    }
+    
+    /* 2. 타이틀 스타일 */
+    .accordion-item [data-ez-role="title"] {
+        cursor: pointer; /* 클릭 가능함을 알림 */
+    }
+
+    /* 3. 화살표 아이콘 기본 스타일 */
+    .accordion-item [data-ez-role="title"]::after {
+        content: ''; 
+        display: block;
+        width: 20px; 
+        height: 20px;
+        /* 배경 이미지 경로:  실제 이미지 경로로 수정 */
+        background: no-repeat center/contain url(/myfolder/images/chevron_right.png); 
+
+        /* 아이콘이 텍스트와 분리되도록 함 */
+        margin-left: 10px;
+        
+        /* 애니메이션 설정 */
+        transition: transform 0.2s ease-in-out;
+        
+        line-height: 1; 
+    }
+
+    /* 4. 펼쳐진 상태 스타일 */
+    /* 스크립트에서 추가하는 .active 클래스를 활용하여 회전 */
+    .accordion-item.active [data-ez-role="title"]::after {
+        /* .active 상태: 펼쳐졌을 때 아래 방향 (90도 회전) */
+        transform: rotate(90deg);
+        transition: transform 0.2s ease-in-out; 
+    }
+}
