@@ -27,7 +27,10 @@
     <!--@css(/layout/basic/css/ec-base-product.css)-->
   	<!--@css(/layout/basic/css/ec-base-prdInfo.css)-->
     <!--@css(/layout/basic/css/ec-base-paginate.css)-->
-
+    
+	 <!--@css(/myfolder/css/ub-variables.css)-->
+     <!--@css(/myfolder/css/ub-grid-system.css)-->
+    
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -69,7 +72,7 @@
 	<div id="wrap">
 <!--@import(/layout/basic/header.html)-->
 <!--@import(/layout/basic/sidebar.html)-->
-<div id="container">
+<div id="container" data-ez="layout-0smjj6p-1">
 			<div id="contents">
 				<span module="Layout_MobileAction" class="RTMB">
 					<a href="#none" onclick="{$go_back}"><!--@import(/svg/icon-go-back.html)-->뒤로가기</a>
@@ -78,6 +81,7 @@
 			</div>
 		</div>
 <!--@import(/layout/basic/footer.html)-->
+<!--#ez="1/1"-->
 </div><!-- //wrap -->
 
 	<div id="progressPaybar" style="display:none;">
@@ -129,5 +133,25 @@
 	<!--@css(/layout/basic/css/add_theme02.css)-->
 	<!--@css(/layout/basic/css/add_theme03.css)-->
 	<!--@css(/layout/basic/css/add_layout.css)-->
+    <!--@css(/myfolder/mystyle.css)-->
+    
+    <!--@js(/myfolder/js/myscript.js)-->
+    
+    <!-- 배너매니저 스크립트 코드 -->
+<style>[df-banner-code][hidden] { display:none !important }</style>
+<script>
+if (!document.getElementById('dfbm-script-59890')){
+  var dfbm_src = 'https://ecimg.cafe24img.com/pg2183b55161532024/yr816/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/314a1a0fc0f2ff6a42ed0724198a6989.js';
+  document.write('<script id="dfbm-script-59890" src="' + dfbm_src + '?v=' + Date.now() + '"><\/script>');
+}
+</script>
+    <!-- //배너매니저 스크립트 코드 -->
+		 
+    <!-- 이미지맵 -->
+		<!--@js(/myfolder/js/jquery.rwdImageMaps.min.js)-->
+		<!--@js(/myfolder/js/jquery.Imagemaps.js)-->
+		
+		<!-- 탭슬라이드 -->
+		<!--@js(/myfolder/js/tab-slides.js)-->
 </body>
 </html>

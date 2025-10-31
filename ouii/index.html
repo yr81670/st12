@@ -9,7 +9,7 @@
 
 <!--@import(/myfolder/ub-3dan.html)-->
 </section>
-<section class="section main_product_category" data-ez-module="product-list-category/2" data-ez-layout="grid4" data-ez="contents-0xlhvh2-1">
+<section class="section main_product_category tab-vertical tab-slides" data-ez-module="product-list-category/2" data-ez-layout="grid4" data-ez="contents-0xlhvh2-1">
 	<ez-prop data-version="1.0.0" type="layout">
 		<ez-var data-prop="layout" data-namespace="ez.module.product-list-category.layout" data-type="array">
 			<ez-item data-id="grid3" data-name="일반3단형(PC 3열/MOBILE 2열)"></ez-item>
@@ -37,17 +37,19 @@
 	<div class="content_list" data-ez-role="content-list">
 		<div class="tabcontent" id="tabContent1" data-ez-role="content-item">
 			<div data-ez-holder="product_listmain">
-				<div module="product_listmain_11" class="ec-base-product">
+				<div module="product_listmain_11" class="ec-base-product swiper-container">
 					<!--
-						$count = 100
+						$count = 16
 						$basket_result = /product/add_basket.html
 						$basket_option = /product/basket_option.html
-						$moreview = yes
+						$moreview = no
 						$cache = yes
 					-->
-					<ul class="prdList grid4" data-ez-role="layout ez-discount-tag">
-						<!--@import(/product/list_product.html)-->
+					<ul class="prdList grid4 swiper-wrapper" data-ez-role="layout ez-discount-tag">
+						<!--@import(/product/list_product_slides.html)-->
 					</ul>
+					<!-- swiper scrollbar -->
+					 <div class="swiper-scrollbar"></div>
 				</div>
 				<div module="product_listmore_1" class="more">
 					<a href="#none" onclick="{$more_action}" class="btnMore">
@@ -59,17 +61,19 @@
 
 		<div class="tabcontent" id="tabContent2" data-ez-role="content-item">
 			<div data-ez-holder="product_listmain">
-				<div module="product_listmain_12" class="ec-base-product">
+				<div module="product_listmain_12" class="ec-base-product swiper-container">
 					<!--
-						$count = 100
+						$count = 16
 						$basket_result = /product/add_basket.html
 						$basket_option = /product/basket_option.html
-						$moreview = yes
+						$moreview = no
 						$cache = yes
 					-->
-					<ul class="prdList grid4" data-ez-role="layout ez-discount-tag">
-						<!--@import(/product/list_product.html)-->
+					<ul class="prdList grid4 swiper-wrapper" data-ez-role="layout ez-discount-tag">
+						<!--@import(/product/list_product_slides.html)-->
 					</ul>
+					<!-- swiper scrollbar -->
+					 <div class="swiper-scrollbar"></div>
 				</div>
 				<div module="product_listmore_2" class="more">
 					<a href="#none" onclick="{$more_action}" class="btnMore">
@@ -81,17 +85,19 @@
 
 		<div class="tabcontent" id="tabContent3" data-ez-role="content-item">
 			<div data-ez-holder="product_listmain">
-				<div module="product_listmain_13" class="ec-base-product">
+				<div module="product_listmain_13" class="ec-base-product swiper-container">
 					<!--
-						$count = 100
+						$count = 16
 						$basket_result = /product/add_basket.html
 						$basket_option = /product/basket_option.html
-						$moreview = yes
+						$moreview = no
 						$cache = yes
 					-->
-					<ul class="prdList grid4" data-ez-role="layout ez-discount-tag">
-						<!--@import(/product/list_product.html)-->
+					<ul class="prdList grid4 swiper-wrapper" data-ez-role="layout ez-discount-tag">
+						<!--@import(/product/list_product_slides.html)-->
 					</ul>
+					<!-- swiper scrollbar -->
+					 <div class="swiper-scrollbar"></div>
 				</div>
 				<div module="product_listmore_3" class="more">
 					<a href="#none" onclick="{$more_action}" class="btnMore">
