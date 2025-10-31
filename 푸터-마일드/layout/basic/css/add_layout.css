@@ -1,0 +1,72 @@
+@media all and (min-width:1024px) {
+
+	/* 레이아웃 테마02 : 상단 좌측 2열 + 하단 좌우반전 */
+	/* 상단 */
+	#header.layout2 .inner .top_nav_box .top_logo {position:static; left:0; transform:translateX(0);}
+	#header.layout2 .inner .top_nav_box .top_category > ul {justify-content:flex-start;}
+	#header.layout2 .inner .top_nav_box .top_category > ul > li {padding:0; margin-right:50px;}
+
+	/* 하단 */
+	#footer.layout2 .inner .bt_logo {right:0;justify-content:flex-end;}
+	#footer.layout2 .inner .bt_logo a {justify-content:flex-end;}
+	#footer.layout2 .bt_top {flex-direction:row-reverse;}
+	#footer.layout2 .bt_top ul li.bt_company {order:1;text-align:right;margin:0;}
+	#footer.layout2 .bt_top ul li.bt_company .bt_info_list {justify-content:flex-end;}
+	#footer.layout2 .bt_top ul li.bt_company .bt_info_list > li {margin:0 0 0 10px;}
+	#footer.layout2 .bt_top > ul > li.bt_cc {margin-left:0;}
+	#footer.layout2 .inner .bt_bottom {flex-direction:row-reverse;}
+	#footer.layout2 .inner .bt_util {justify-content:flex-end;}
+	#footer.layout2 .inner .bt_util li {margin:0 0 10px 13px;padding:0 0 0 13px;}
+
+
+	/* 레이아웃 테마03 : 상단 좌측 1열 + 하단 가운데 */
+	/* 상단 */
+	#header.layout3 {padding-bottom:10px;}
+	#header.layout3 .inner .top_nav_box {align-items:flex-start;flex-wrap:nowrap;}
+	#header.layout3 .inner .top_nav_box .top_logo {order:1;position:static;transform:translateX(0); margin:0 50px 0 0; height:50px;flex-shrink:0;}
+	#header.layout3 .inner .top_nav_box .top_mypage {position:absolute;top:0;right:0;height:50px;}
+	#header.layout3 .inner .top_nav_box .top_mypage a.xans-layout-orderbasketcount .count {top:25px;}
+	#header.layout3 .inner .top_nav_box div[data-ez-module='menu-main/1'] {order:2;}
+	#header.layout3 .inner .top_nav_box .top_category {justify-content:flex-start;width:auto;margin:0 160px 0 0;}
+	#header.layout3 .inner .top_nav_box .top_category > ul {justify-content:flex-start;}
+	#header.layout3 .inner .top_nav_box .top_category > ul > li {padding: 0; margin-right:50px;}
+
+	/* 하단 */
+	#footer.layout3 .inner {padding:40px 0;}
+	#footer.layout3 .inner .bt_logo {transform:translateX(0);position:static;text-align:center;display:flex;justify-content:center;}
+	#footer.layout3 .bt_top {flex-direction: column; align-items: center;}
+	#footer.layout3 .bt_top > ul {flex-direction: column; align-items: center;}
+	#footer.layout3 .bt_top > ul > li {margin:35px 0 0; text-align: center;}
+	#footer.layout3 .bt_top > ul > li.bt_cc {order:2;}
+	#footer.layout3 .bt_top > ul > li.bt_sns {order:4;}
+	#footer.layout3 .bt_top > ul > li.bt_bank {order:3;}
+	#footer.layout3 .bt_top ul li.bt_company {order: 1;text-align: center;}
+	#footer.layout3 .bt_top ul li.bt_company .bt_info_list {justify-content:center;}
+	#footer.layout3 .bt_top ul li.bt_company .bt_info_list li {margin:0 5px;}
+	#footer.layout3 .bt_top > ul > li ul li {display: inline-block; margin: 0;}
+	#footer.layout3 .bt_top > ul > li ul li.bt_title_sub {display:block;}
+	#footer.layout3 .bt_top > ul > li.bt_cc ul li {display: block;line-height:1.7;margin-bottom:10px;}
+	#footer.layout3 .bt_top > ul > li.bt_sns a {margin: 0 7px;display:inline-block;}
+	#footer.layout3 .inner .bt_util {justify-content: center;}
+	#footer.layout3 .inner .bt_util li {margin:0 6px;padding:0 6px;}
+	#footer.layout3 .inner .bt_info {margin-top:15px;}
+	#footer.layout3 .inner .bt_bottom {flex-direction: column; align-items: center; margin-top: 0; padding-top: 0;}
+	#footer.layout3 .inner .bt_bottom > div {margin-top: 35px;}
+	#footer.layout3 .inner .bt_bottom .bt_copyright {order: 1;}
+
+
+	/* 레이아웃 테마04 : 2단 슬라이딩 메뉴 노출형 */
+	/* 상단 */
+	#header.layout4 .inner .top_nav_box .top_category {position:relative;}
+	#header.layout4 .inner .top_nav_box .top_category > ul {height:50px;overflow:hidden;}
+	#header.layout4 .inner .top_nav_box .top_category > ul > li {position:static;}
+	#header.layout4 .inner .top_nav_box .top_category li.on .sub_cate01,
+	#header.layout4 .inner .top_nav_box .top_category .sub-category {left:auto;transform:translateX(-30%);}
+	#header.layout4 .inner .top_nav_box .top_mypage a.eNavFold {display:flex;align-items:center;position:absolute;left:0;height:30px;margin-top:-2px;}
+	#header.layout4 + #aside {width:40%;max-width:700px;}
+
+
+	/* 풀사이즈 */
+	#contents > .section {max-width:1280px;width:92%;margin-left:auto;margin-right:auto;}
+	.section_full {width:100% !important;max-width:100% !important;}
+}

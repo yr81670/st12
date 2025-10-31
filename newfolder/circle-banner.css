@@ -1,0 +1,53 @@
+  .circle-banner {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.circle-banner__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+.circle-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #111;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.circle-item img {
+  width: 140px;
+  height: 140px;
+  border: 2px solid #ffcc88;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.circle-item span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+@media (max-width: 768px) {
+  .circle-banner__inner {
+    gap: 30px;
+  }
+  .circle-item img {
+    width: 100px;
+    height: 100px;
+  }
+  .circle-item span {
+    font-size: 16px;
+  }
+}

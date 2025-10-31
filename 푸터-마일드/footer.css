@@ -1,0 +1,48 @@
+#footer{margin-top: 100px;} /*삭제*/
+/* 푸터 css 연습 */
+#footer{
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+}
+
+.bt_top{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width:767px){
+  .bt_top{
+    flex-direction: column;
+  }
+}
+/* 왼쪽로고, 기본정보 */
+.bt_top .info_left{}
+.bt_top .info_left .bt_logo{
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.bt_top .info_left .bt_logo.bt_logo-image{
+  text-indent: -9999px;
+}
+.bt_top .info_left .bt_logo a{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  line-height: 1;
+}
+.bt_top .info_left .bt_logo.bt_logo-text a{
+  font-size: 30px;
+  line-height: 1.6;
+}
+/* clamp()함수 clamp(최소, 선호값, 최대값) */
+.bt_top .info_left .bt_logo a img{
+  width: clamp(150px,10vw,200px);
+}
+.bt_top .info_left .bt_logo.bt_logo-text img{
+  display: none;
+}
+.bt_top .info_left .bt_logo.bt_logo-image img{
+  /* 로고를 회색톤으로 변경 */
+  /* filter: grayscale(60%); */
+}

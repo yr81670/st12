@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sns 텍스트 푸터</title>
+  <style>
+    *{padding: 0; margin: 0;}
+    body{margin:50px}
+    a{text-decoration: none; color: currentColor;}
+    /* ****
+    sns 텍스트를 밀어내고 이미지를 표시할 때
+    */
+    .sns_txt{
+      display: flex;
+      gap: 0 10px;
+      /* 제목이 아이콘 위에 올때 */
+      flex-wrap: wrap;
+    }
+    .sns_txt [data-ez-role="title"]{
+      width: 100%;
+      background-color: #ccc;
+    }
+    .sns_txt a{
+      width: 33px; height: 33px; display: block;
+      overflow: hidden;
+      /* background-size: contain은 요소의 크기에 맞춰서 배경이미지 표시 */
+      background: no-repeat center/contain;
+
+      /* 이미지를 각 a에 설정후 삭제 */
+      background-image: url(/myfolder/images/youtube_logo.png);
+      /* 글자를 브라우저보다 아주 크게 내어쓰기해서 안보이게 */
+      text-indent: -9999px;
+
+    }
+
+    .sns_txt a[data-ez-item="instagram"]{
+      background-image: url(/myfolder/images/instagram_logo.png);
+    }
+    .sns_txt a[data-ez-item="youtube"]{
+      background-image: url(/myfolder/images/youtube_logo.png);
+    }
+    .sns_txt a[data-ez-item="facebook"]{}
+    .sns_txt a[data-ez-item="kakao"]{}
+    .sns_txt a[data-ez-item="twitter"]{}
+    .sns_txt a[data-ez-item="blog"]{}
+
+  </style>
+</head>
+<body>
+  <div class="sns_txt" data-ez-group="sns" data-ez-role="list">
+						<div class="bt_title" data-ez-role="title">SNS</div>
+						<a data-ez-item="instagram" href="https://instagram.com/" target="_blank">instagram</a>
+						<a data-ez-item="youtube" href="https://youtube.com/" target="_blank">youtube</a>
+						<a data-ez-item="facebook" href="https://facebook.com/" target="_blank">facebook</a>
+						<a data-ez-item="kakao" href="https://pf.kakao.com/" target="_blank" style="">kakao</a>
+						<a data-ez-item="twitter" href="https://twitter.com/" target="_blank">twitter</a>
+						<a data-ez-item="blog" href="https://blog.naver.com/" target="_blank">blog</a>
+					</div>
+</body>
+</html>

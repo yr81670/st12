@@ -1,0 +1,37 @@
+/** subpage_theme03 (button_color - #dbe3f6),(Webfont - Pretend) **/
+.theme03,
+.theme03 input,
+.theme03 select,
+.theme03 textarea,
+.theme03 code,
+.theme03 button {font-family:"Manrope", "Pretendard", Arial, sans-serif !important;}
+
+/* 버튼 */
+.theme03 .xans-product-action .action_button .sub_sold,
+.theme03 [class^='btnSubmit'],
+.theme03 a[class^='btnSubmit'] {background:#dbe3f6;color:#333;}
+.theme03 [class^='btnNormal']:not(.disabled):hover,
+.theme03 [class^='btnNormal']:not(.disabled).selected {border-color:#dbe3f6;}
+
+/* 상단 메뉴 */
+.theme03 #header .inner .top_nav_box .top_category .sub-category li:hover > a {background-color:#dbe3f6;}
+
+/* 상품더보기 */
+.theme03 .more .btnMore:hover {color:#dbe3f6;}
+
+/* 메인 탭상품 상품진열 */
+.theme03 .main_tab_product .main_product_inner .main_product_tab li.active {background:#dbe3f6;}
+
+/* 메인 비디오배너 */
+.theme03 .main_video .main_video_box:before {background-color: #dbe3f6;}
+
+/* 메인 지도 */
+.theme03 .main_map {background-color: #f4f7fe;}
+
+/* 하단 */
+.theme03 #footer {background:#fff;}
+
+/* 상품 할인율 */
+.theme03 .xans-product-detail .infoArea table .sale_box,
+.theme03 .ec-base-product .prdList .thumbnail .sale_box {background-color:#dbe3f6;color:#333;}
+
