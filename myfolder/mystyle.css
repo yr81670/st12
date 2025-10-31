@@ -833,3 +833,9 @@ padding-left: 0;
       width: 100%;
       height: 100%;
     }
+/*
+ .tab-vertical.tab-slides
+ */
+    .tab-slides .ec-base-product .prdList.swiper-wrapper{
+  flex-wrap: nowrap;
+} 
