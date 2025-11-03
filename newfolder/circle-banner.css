@@ -19,14 +19,14 @@
   align-items: center;
   text-decoration: none;
   color: #111;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 300;
 }
 
 .circle-item img {
   width: 140px;
   height: 140px;
-  border: 2px solid #ffcc88;
+  border: 1px solid #ccc;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 16px;
@@ -49,5 +49,19 @@
   }
   .circle-item span {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 425px) {
+  .circle-banner__inner {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .circle-item {
+    width: calc(50% - 20px); /* 양쪽 여백 균형 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

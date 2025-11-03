@@ -289,6 +289,12 @@ hero section용
   height: auto;
   max-width: none;
 }
+@media (max-width: 768px) {
+ .visual-section .swiper-slide {
+    border-radius: 30px;
+    overflow: hidden;
+  }
+}
 
 /* 
 ub-swiper
@@ -299,7 +305,30 @@ ub-swiper
  .ub-swiper .swiper-button-next{
   width:60px; height: 60px;
   background-size: contain;
- }
+   position: absolute;
+  top: 50%; /* 배너 중간에 위치 */
+  transform: translateY(-50%);
+  z-index: 10;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.visual-section .swiper-button-prev:hover,
+.visual-section .swiper-button-next:hover {
+  opacity: 1;
+}
+
+.visual-section .swiper-button-prev {
+  background-image: url(/newfolder/images/arrow_back.svg);
+  left: 20px;
+}
+
+.visual-section .swiper-button-next {
+  background-image: url(/newfolder/images/arrow_forward.svg);
+  right: 20px;
+}
+ 
+
 .ub-swiper .swiper-button-prev{
     background-image: url(/newfolder/images/arrow_back.svg);
    background-position: center;
@@ -331,7 +360,7 @@ ub-swiper
 swiper controls가 슬라이드 아래 표시
  */
 .ub-swiper.ub-swiper-controls-bottom{
-  width:80%;
+  width:100%;
   margin:0 auto;
 }
 .ub-swiper.ub-swiper-controls-bottom .swiper-wrapper{
@@ -340,7 +369,7 @@ swiper controls가 슬라이드 아래 표시
 
   /* 슬라이드 .swiper-wrapper 기준 세로 가운데 */
   align-items: center;  
-  gap: 20px;
+  gap: 0px;
 
 }
 .ub-swiper.ub-swiper-controls-bottom .swiper-slide{
@@ -408,6 +437,7 @@ swiper controls가 슬라이드 아래 표시
   max-width: 85%;
   height: 2px;
   background: rgba(0,0,0,0.1);
+  display: none;
 }
 
 .ub-swiper.ub-swiper-controls-bottom .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
@@ -423,17 +453,23 @@ swiper controls가 슬라이드 아래 표시
 
 /* 자동 재생 토글 버튼 스타일링 */
 .ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle{
-  order:6;
-  width: auto;
-  height: auto;
-  background: transparent;
-  border: none;
   cursor: pointer;
+  width: 41px; 
+  height: 41px;
+  background: #e8e8e8;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-top: 20px;
 }
 .ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-play,
 .ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-pause{
   display: inline-block ;
-  width: 24px; height: 24px;
+  width: 20px; height: 20px;
   overflow: hidden;
   text-indent: -9999px;
   background: center/contain no-repeat;
@@ -441,14 +477,93 @@ swiper controls가 슬라이드 아래 표시
 
 .ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-play{
   background-image: url(/newfolder/images/play_arrow.png);
+  opacity: 0.8;
 }
 .ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-pause{
   background-image: url(/newfolder/images/pause.png);
+  opacity: 0.8;
 }
 .ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-play.hidden,
 .ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle .icon-pause.hidden{
   display: none;
 }
+
+
+.swiper-pagination-custom-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px auto 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* swiper-pagination-custom 박스 */
+.swiper-pagination-custom {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin: 20px 0 0 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.swiper-pagination-custom li {
+  flex: 1;
+  background: #e8e8e8;
+  padding: 12px 10px;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.swiper-pagination-custom li:hover {
+  background: #db9a5d;
+  color: #ffffff;
+}
+
+.swiper-pagination-custom li div {
+  line-height: 1.2;
+}
+
+@media (max-width: 1024px) {
+  .swiper-pagination-custom {
+    width: 90%;
+    gap: 10px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .swiper-pagination-custom {
+    flex-wrap: nowrap;
+    width: 90%;
+    gap: 10px;
+  }
+  
+  .swiper-pagination-custom li {
+    width: 20%;
+    max-width: 20%;
+    min-height: 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 425px) {
+  .ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle,
+  .swiper-pagination-custom {
+ display: none;
+  }
+}
+
+
 
 /* ********
 단처리
@@ -458,7 +573,7 @@ ub-dan
 .ub-dan{}
 .ub-dan-row{}
 .ub-dan-item{
-  border: 1px solid #f00;
+  /* border: 1px solid #f00; */
 }
 
 /* ******
