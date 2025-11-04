@@ -294,8 +294,37 @@ hero section용
     border-radius: 30px;
     overflow: hidden;
   }
-}
 
+  .visual-section .swiper {
+    width: 100%;
+    padding: 0 16px; /* 좌우 여백 */
+    box-sizing: border-box;
+  }
+
+  .visual-section .swiper-slide {
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* 이미지가 카드 꽉 채우게 */
+  .visual-section .swiper-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /*fraction */
+  .visual-section .swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    right: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+    z-index: 20;
+  }
+}
 /* 
 ub-swiper
 1. navigation 이미지 변경
@@ -556,13 +585,12 @@ swiper controls가 슬라이드 아래 표시
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 440px) {
   .ub-swiper.ub-swiper-controls-bottom #btn-autoplay-toggle,
   .swiper-pagination-custom {
  display: none;
   }
 }
-
 
 
 /* ********

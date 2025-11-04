@@ -19,8 +19,6 @@
   align-items: center;
   text-decoration: none;
   color: #111;
-  font-size: 15px;
-  font-weight: 300;
 }
 
 .circle-item img {
@@ -29,13 +27,13 @@
   border: 1px solid #ccc;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   transition: all 0.3s ease;
 }
 
 .circle-item span {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 
@@ -48,20 +46,26 @@
     height: 100px;
   }
   .circle-item span {
-    font-size: 16px;
+    font-size: 15px;
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 430px) {
   .circle-banner__inner {
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
   }
 
   .circle-item {
-    width: calc(50% - 20px); /* 양쪽 여백 균형 */
+    width: calc(50% - 6px);
+    padding: 12px 0 12px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
+   .circle-item img{
+    width: 100%;  
+    border-radius:12px;
+}
 }
