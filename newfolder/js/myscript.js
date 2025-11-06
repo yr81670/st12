@@ -93,3 +93,68 @@ jQuery(document).ready(function ($) {
   // 예: if ($('.product-list').length) { ... }
 });
 
+
+// 상품분류 아코디언
+function initCategoryAccordion() {
+    const $cateTitles = $('.cate-title');
+    
+    $cateTitles.each(function() {
+        const $title = $(this);
+        
+        // 이미 화살표가 있으면 건너뛰기
+        if ($title.find('.accordion-arrow').length > 0) return;
+        
+        // 화살표 HTML 생성
+        const arrowHtml = `
+            <span class="accordion-arrow">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </span>
+        `;
+        
+        // h2에 화살표 추가
+        $title.append(arrowHtml);
+        
+        // 클릭 이벤트 추가
+        $title.on('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            console.log('클릭됨!'); // 디버깅용
+            
+            // category-accordion-wrap 찾기
+            const $wrapper = $(this).closest('.category-accordion-wrap');
+            
+            if ($wrapper.length === 0) {
+                console.log('wrapper를 찾을 수 없습니다');
+                return;
+            }
+            
+            // PC와 태블릿용 메뉴 찾기
+            const $pcMenu = $wrapper.find('.display_pc_only .menuCategory.menu');
+            const $tabletMenu = $wrapper.find('.display_tablet_only .menuCategory.menu');
+            
+            console.log('PC 메뉴:', $pcMenu.length, 'Tablet 메뉴:', $tabletMenu.length); // 디버깅용
+            
+            // active 클래스 토글
+            $(this).toggleClass('active');
+            
+            // 메뉴 표시/숨김 토글
+            if ($pcMenu.length > 0) $pcMenu.toggleClass('show');
+            if ($tabletMenu.length > 0) $tabletMenu.toggleClass('show');
+        });
+        
+        // 초기 상태: 메뉴 숨김
+        const $wrapper = $title.closest('.category-accordion-wrap');
+        if ($wrapper.length > 0) {
+            $wrapper.find('.display_pc_only .menuCategory.menu').removeClass('show');
+            $wrapper.find('.display_tablet_only .menuCategory.menu').removeClass('show');
+        }
+    });
+}
+
+// jQuery ready 내부에서 실행
+$(document).ready(function() {
+    initCategoryAccordion();
+});
