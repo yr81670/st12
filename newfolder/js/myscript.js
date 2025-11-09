@@ -158,3 +158,91 @@ function initCategoryAccordion() {
 $(document).ready(function() {
     initCategoryAccordion();
 });
+
+
+// ========================================
+// 헤더 검색박스 기능
+// ========================================
+
+function initHeaderSearch() {
+  const $searchLi = $('.top_mypage .top_search');
+  
+  if ($searchLi.length === 0) {
+    console.error('검색 리스트 요소를 찾을 수 없습니다.');
+    return;
+  }
+  
+  // 기존 eSearch 링크의 클릭 이벤트 제거
+  $searchLi.find('.eSearch').off('click').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  });
+  
+  // 기존 내용 완전히 비우고 교체
+  $searchLi.empty().html(`
+    <input type="text" 
+           class="search_input" 
+           id="headerSearchInput"
+           autocomplete="off"
+           aria-label="상품 검색">
+    <button type="button" 
+            class="search_btn" 
+            id="headerSearchBtn"
+            aria-label="검색">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <path d="m21 21-4.35-4.35"></path>
+      </svg>
+    </button>
+  `);
+  
+  console.log('검색창 초기화 완료!');
+  
+  // 요소 가져오기
+  const $searchInput = $('#headerSearchInput');
+  const $searchBtn = $('#headerSearchBtn');
+  
+  // 검색 실행 함수
+  function executeSearch() {
+    const keyword = $searchInput.val().trim();
+    
+    if (keyword === '') {
+      alert('검색어를 입력해주세요.');
+      $searchInput.focus();
+      return;
+    }
+    
+    // 카페24 검색 페이지로 이동
+    const searchUrl = '/product/search.html?keyword=' + encodeURIComponent(keyword);
+    window.location.href = searchUrl;
+  }
+  
+  // 검색 버튼 클릭 이벤트
+  $searchBtn.on('click', function(e) {
+    e.preventDefault();
+    executeSearch();
+  });
+  
+  // Enter 키 입력 이벤트
+  $searchInput.on('keypress', function(e) {
+    if (e.key === 'Enter' || e.keyCode === 13) {
+      e.preventDefault();
+      executeSearch();
+    }
+  });
+  
+  // 검색창 포커스 시 애니메이션 (선택사항)
+  $searchInput.on('focus', function() {
+    $(this).css('border-bottom-color', '#333');
+  });
+  
+  $searchInput.on('blur', function() {
+    $(this).css('border-bottom-color', '#000');
+  });
+}
+
+// jQuery ready 내부에서 실행
+$(document).ready(function() {
+  initHeaderSearch();
+});

@@ -69,18 +69,46 @@
 			<div class="top_logo" module="Layout_LogoTop"><a href="/"><img src="{$logo}" alt="{$mall_name}"></a></div><!-- //top_logo -->
 			<div class="top_nav"><a href="javascript:;" class="eNavFold"><i aria-hidden="true" class="icon icoNav"></i></a></div>
 
-			<div data-ez-module="menu-main/1" data-ez-mode="manual">
-        <div class="xans-element- xans-layout xans-layout-category top_category">
-<ul><li><a href="/category/%EB%B2%A0%EC%8A%A4%ED%8A%B8/59/">베스트</a></li><li><a href="/category/%EC%8B%A0%EC%83%81%ED%92%88/58/">신상품</a></li><li><a href="/category/%EC%B6%94%EC%B2%9C%EC%83%81%ED%92%88/42/">추천상품</a></li><li><a href="/category/%EA%B8%B0%ED%9A%8D%EC%84%B8%ED%8A%B8%EC%83%81%ED%92%88/43/">기획/세트상품</a></li><li><a href="/project/%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/67/">기획전</a></li><li><a href="/shopinfo/company.html">네모네</a></li><li><a href="/category/%EB%8F%85%EC%84%9C%EB%8C%80/63/">독서대</a></li></ul>
+<!-- GNB 왼쪽 햄버거 버튼 -->
+<div class="hamburger_button show-pc">
+  <button id="btnHamburger" class="btn-hamburger" type="button" aria-controls="allmenu" aria-expanded="true" aria-label="전체메뉴 열기" data-role="hamburger">
+    <span class="hamburger_line"></span>
+    <span class="hamburger_line"></span>
+    <span class="hamburger_line"></span>
+  </button>
 </div>
-      </div><!-- //menu-main/1 -->
 
+<!-- //올메뉴를 위한햄버거 -->
+			
+
+			<div data-ez-module="menu-main/1" data-ez-mode="manual">
+				<div class="xans-element- xans-layout xans-layout-category top_category">
+					<ul>
+						<li><a href="/category/%EB%B2%A0%EC%8A%A4%ED%8A%B8/59/">베스트</a></li>
+						<li><a href="/category/%EC%8B%A0%EC%83%81%ED%92%88/58/">신상품</a></li>
+						<li><a href="/category/%EC%B6%94%EC%B2%9C%EC%83%81%ED%92%88/42/">추천상품</a></li>
+						<li><a href="/category/%EA%B8%B0%ED%9A%8D%EC%84%B8%ED%8A%B8%EC%83%81%ED%92%88/43/">기획/세트상품</a></li>
+						<li><a href="/project/%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/67/">기획전</a></li>
+						<li><a href="/shopinfo/company.html">네모네</a></li>
+						<li><a href="/category/%EB%8F%85%EC%84%9C%EB%8C%80/63/">독서대</a></li>
+					</ul>
+				</div>
+			</div><!-- //menu-main/1 -->
+
+			<div>
+				<ul>
+					<li><a href="">회사소개</a></li>
+					<li><a href="">오시는길</a></li>
+				</ul>
+			</div>
 			<div class="top_mypage">
 				<a href="javascript:;" class="eSearch"><!--@import(/svg/icon-search.html)--></a>
 				<a href="/myshop/index.html"><!--@import(/svg/icon-user.html)--></a>
 				<a href="/order/basket.html" module="Layout_orderBasketcount"><!--@import(/svg/icon-cart.html)--><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a>
 			</div><!-- //top_mypage -->
 		</div><!-- //top_nav_box -->
+
+		<!--@import(/myfolder/allmenu.html)-->
 	</div><!-- //inner -->
 </header>
 <!--#ez="1/10"-->
