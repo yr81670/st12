@@ -577,11 +577,19 @@ swiper controls가 슬라이드 아래 표시
   align-items: center;
   justify-content: center;
   font-size: 14px;
+  cursor: pointer;
 }
+
 .swiper-pagination-custom li:hover {
   background: #db9a5d;
-  color: #ffffff;
+  color: #fff;
 }
+
+.swiper-pagination-custom li.active {
+  background-color: #db9a5d;
+  color: #fff;
+}
+
 
 .swiper-pagination-custom li div {
   line-height: 1.2;
@@ -1002,38 +1010,52 @@ padding-left: 0;
       height: 100%;}
   
 /* ---------------------------상품분류카테고리아코디언 */
-      /* 아코디언 래퍼 */
+
+/* 아코디언 래퍼 */
 .category-accordion-wrap {
     width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 전체를 가운데 정렬 */
 }
 
 /* 아코디언 제목 스타일 */
 .cate-title {
-    display: flex;
+    display: inline-flex; /* inline-flex로 변경 */
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     cursor: pointer;
     position: relative;
+    margin-bottom: 10px;
+    user-select: none;
+    transition: all 0.3s ease;
+    width: auto; /* width auto로 콘텐츠 크기만큼만 */
+}
+
+.cate-title:hover {
+    opacity: 0.8;
 }
 
 /* 아코디언 화살표 */
 .accordion-arrow {
-    width: 16px;
-    height: 16px;
-    min-width: 16px;
-    min-height: 16px;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
     transition: transform 0.3s ease;
     cursor: pointer;
     flex-shrink: 0;
     margin-left: 10px;
-    display: inline-block;
-    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* 화살표 SVG 기본 스타일 */
 .accordion-arrow svg {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     display: block;
 }
 
@@ -1046,12 +1068,14 @@ padding-left: 0;
 .menuCategory.menu {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
 }
 
 /* 메뉴 카테고리 열림 상태 */
 .menuCategory.menu.show {
-    max-height: 1000px; /* 충분히 큰 값 */
+    max-height: 2000px;
+    opacity: 1;
 }
 
 /* display_pc_only와 display_tablet_only 내부 메뉴 처리 */
@@ -1060,21 +1084,11 @@ padding-left: 0;
     display: block;
 }
 
-/* 닫혔을 때는 display none */
-.display_pc_only .menuCategory.menu:not(.show),
-.display_tablet_only .menuCategory.menu:not(.show) {
-    display: none;
-}
-
-/* 열렸을 때는 flex 유지 */
-.display_pc_only .menuCategory.menu.show,
-.display_tablet_only .menuCategory.menu.show {
-    display: block;
-}
-
+/* 메뉴 리스트 스타일 */
 .menuCategory.menu li {
     width: 100%;
     padding: 8px 0;
+    text-align: center;
 }
 
 .menuCategory.menu li a {
@@ -1082,26 +1096,26 @@ padding-left: 0;
     padding: 6px 4px;
     font-size: 15px;
     color: #444;
+    text-align: center;
 }
 
 .menuCategory.menu li a:hover {
     color: #000;
 }
-.cate-title {
-    margin-bottom: 10px;
-}
 
+/* ec-base-tab 스타일 */
 .ec-base-tab.typeMenu {
-  display: flex;
-  flex-direction: column; /* 세로로 쌓기 */
-  align-items: center; /* 자식 가운데 정렬 */
-  justify-content: center;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;}
 
 .ec-base-tab.typeMenu > .display_pc_only,
 .ec-base-tab.typeMenu > .display_tablet_only {
-  width: auto;
-  text-align: center;
+    width: 100%;
+    text-align: center;
 }
 
 .ec-base-tab.typeMenu li.selected a.button {
@@ -1110,9 +1124,128 @@ padding-left: 0;
 
 .ec-base-tab.typeMenu li a.button {
     padding: 10px 10px 10px 0px;
+    text-align: center;
 }
 
+/* 반응형: 태블릿 (441px ~ 1023px) */
+@media (min-width: 441px) and (max-width: 1023px) {
+    .display_pc_only {
+        display: none ;
+    }
+    
+    .display_tablet_only {
+        display: block ;
+    }
+    
+    .cate-title {
+        justify-content: center;
+    }
+    
+    .ec-base-tab.typeMenu {
+        align-items: center;
+    }
+    
+    .menuCategory.menu li,
+    .menuCategory.menu li a {
+        text-align: center;
+    }
+}
+
+/* 반응형: PC (1024px 이상) */
+
+@media (max-width: 1024px) {
+    .xans-product-headcategory.titleArea.section h2 {
+        display: flex;}
+    .xans-product-headcategory.titleArea.section {
+        padding: 40px 0 5px;
+      }}
+
+@media (min-width: 1024px) {
+    .display_tablet_only {
+        display: none;
+    }
+    
+    .display_pc_only {
+        display: block;
+    }
+    
+    .cate-title {
+        justify-content: center;
+    }
+    
+    .ec-base-tab.typeMenu {
+        align-items: center;
+    }
+    
+    .menuCategory.menu li,
+    .menuCategory.menu li a {
+        text-align: center;
+      }
+    .category-accordion-wrap h2.cate-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* 반응형: 모바일 (440px 이하) - 아코디언  */
+@media (max-width: 440px) {
+  /* 메뉴 항상 열림 */
+  .menuCategory.menu {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-height: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+  }
+
+  /* li 정렬 */
+  .menuCategory.menu li {
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .menuCategory.menu li a {
+     display: flex; 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8px 12px; 
+    line-height: 1;
+  } 
+
+  /* 화살표 숨기기 */
+  .accordion-arrow {
+    display: none !important;
+  }
+
+  /* 제목 클릭 비활성화 */
+  .cate-title {
+    cursor: default !important;
+  }
+
+  .cate-title.active {
+    transform: none !important;
+  }
+}
+  @media screen and (max-width: 1440px) {
+    .ec-base-tab.typeMenu ul > li {
+        margin: 0 0 0 25px;
+    }
+}
+
+
 /* --------------------------//상품분류카테고리아코디언 */
+
 
 
 /* -------------------------------헤더 mypage 위치조정 */
@@ -1350,12 +1483,9 @@ top: 10px !important;
   }
 }
 
- /* 서치버튼 */
-.top_mypage .top_search {
-border: 1px solid red;}
 
 /* ========================================
-   검색박스 스타일
+  서치버튼( 검색박스 스타일)
 ======================================== */
 
 /* 검색 리스트 아이템 */
@@ -1363,6 +1493,7 @@ border: 1px solid red;}
   position: relative;
   display: flex;
   align-items: center;
+  margin-right: 15px;
 }
 
 /* 검색 아이콘 숨기기 (input으로 대체) */
@@ -1372,13 +1503,13 @@ border: 1px solid red;}
 
 /* 검색 입력창 */
 .top_mypage .top_search .search_input {
-  width: 200px;
-  height: 32px;
-  padding: 5px 35px 5px 10px;
+  width: 140px;
+  height: 28px;
+  padding: 5px 30px 5px 8px;
   border: none;
-  border-bottom: 2px solid #000;
+  border-bottom: 1px solid #000;
   background: transparent;
-  font-size: 14px;
+  font-size: 13px;
   outline: none;
   transition: all 0.3s ease;
 }
@@ -1386,19 +1517,19 @@ border: 1px solid red;}
 /* 검색창 포커스 시 */
 .top_mypage .top_search .search_input:focus {
   border-bottom-color: #333;
-  width: 220px;
+  width: 160px;
 }
 
-/* 검색창 placeholder 스타일 (사용 안 하신다고 했지만 일단 포함) */
+/* 검색창 placeholder 스타일 */
 .top_mypage .top_search .search_input::placeholder {
   color: #999;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 /* 검색 버튼 */
 .top_mypage .top_search .search_btn {
   position: absolute;
-  right: 5px;
+  right: 0;
   width: 24px;
   height: 24px;
   border: none;
@@ -1408,27 +1539,190 @@ border: 1px solid red;}
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
 }
 
 /* 검색 버튼 아이콘 */
 .top_mypage .top_search .search_btn svg {
   width: 18px;
   height: 18px;
-  fill: #000;
+  stroke: #000;
+  fill: none;
 }
 
 /* 검색 버튼 호버 효과 */
 .top_mypage .top_search .search_btn:hover svg {
-  fill: #666;
+  stroke: #666;
 }
 
-/* 모바일 대응 */
+/* 아이콘 간격 조정 */
+.top_mypage > li {
+  margin-left: 12px;
+}
+
+.top_mypage > li:first-child {
+  margin-left: 0;
+}
+
+/* 태블릿 대응 */
 @media (max-width: 768px) {
   .top_mypage .top_search .search_input {
-    width: 150px;
+    width: 120px;
   }
   
   .top_mypage .top_search .search_input:focus {
-    width: 170px;
+    width: 140px;
   }
+  
+  .top_mypage .top_search {
+    margin-right: 10px;
+  }
+  
+  .top_mypage > li {
+    margin-left: 10px;
+  }
+}
+
+/* ========================================
+   모바일 440px 이하 - 별도 검색창 오버레이
+======================================== */
+@media (max-width: 440px) {
+  /* 헤더의 검색창 숨기기 */
+  .top_mypage .top_search .search_input {
+    display: none;
+  }
+  
+  /* 검색 버튼만 보이기 */
+  .top_mypage .top_search .search_btn {
+    position: static;
+  }
+  
+  .top_mypage .top_search {
+    margin-right: 8px;
+  }
+  
+  .top_mypage > li {
+    margin-left: 8px;
+  }
+  
+  /* 모바일 검색 오버레이 */
+  #mobileSearchOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 60px;
+  }
+  
+  #mobileSearchOverlay.active {
+    display: flex;
+  }
+  
+  /* 검색창 컨테이너 */
+  .mobile-search-container {
+    width: 90%;
+    max-width: 400px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: slideDown 0.3s ease;
+  }
+  
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* 검색창 헤더 */
+  .mobile-search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .mobile-search-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .mobile-search-close {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mobile-search-close svg {
+    width: 20px;
+    height: 20px;
+    stroke: #666;
+  }
+  
+  /* 모바일 검색 입력 영역 */
+  .mobile-search-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .mobile-search-input {
+    width: 100%;
+    height: 45px;
+    padding: 10px 50px 10px 15px;
+    border: 2px solid #000;
+    border-radius: 4px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .mobile-search-input:focus {
+    border-color: #333;
+  }
+  
+  .mobile-search-submit {
+    position: absolute;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background: #000;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .mobile-search-submit svg {
+    width: 18px;
+    height: 18px;
+    stroke: #fff;
+    fill: none;
+  }
+}
+
+.xans-project-list h3 {
+    position: relative;
+    border-bottom: 1px solid #ccc;
 }
